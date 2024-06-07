@@ -15,12 +15,14 @@ Run `MQTT_SUB fan/topic`
 Run `MQTT_SUB fan/topic <message>`
 
 ### Accepted pub messages
-| Message    | Outcome |
-| -------- | ------- |
-| 0 $\leq$ x $\leq$ 255  | Sets fan duty cycle to x    |
-| ON | set duty cycle to 100     |
-| OFF    | set duty cycle to 0    |
-| FLIP    | reverse rotation of fan, keeps same duty cycle    |
+| Message    | Outcome | Outcome |
+| -------- | ------- | ------- |
+| 0 $\leq$ x $\leq$ 255  | Sets fan duty cycle to x    | MQTT_SUB fan/topic 100 |
+| ON | set duty cycle to 100     | MQTT_SUB fan/topic ON |
+| OFF    | set duty cycle to 0    | MQTT_SUB fan/topic OFF |
+| FLIP    | reverse rotation of fan, keeps same duty cycle    | MQTT_SUB fan/topic FLIP |
+
+Note: The accepted messages must either be between 0 and 255 or match `ON`, `OFF`, or `FLIP` exactly (case sensitive).
 
 ## Components used
 - [ESP8266 board](https://www.amazon.co.uk/gp/product/B0754LZ73Z/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
