@@ -2,8 +2,15 @@
 Fun small project for making a fan spin using a local MQTT message broker [mosquitto](https://mosquitto.org/).
 
 ## Set Up
-- mosquitto installed using [brew](https://formulae.brew.sh/formula/mosquitto)
-- source `fan.sh` script
+- Mosquitto installed using [brew](https://formulae.brew.sh/formula/mosquitto)
+- Source `fan.sh` script
+- Create a `secrets.h` file in the same directory as the `fan.ino` script with the following format:
+```
+#define SECRET_SSID "<WIFI SSID>"
+#define SECRET_PASSWORD "<WIFI password>"
+#define SECRET_MQTT_BROKER "<IP address of network>"
+#define SECRET_MQTT_PORT <MQTT port>
+```
 
 ## Start fan topic
 Run `MQTT_START`
